@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERSICUS PRIME | هلدینگ پرسیکوس پرایم</title>
+    <style>
+        :root {
+            --bg-dark: #0b0f19;
+            --bg-card: #131926;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --astro-purple: #bc52ee;
+            --astro-blue: #4f46e5;
+            --border-glow: rgba(188, 82, 238, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Tahoma, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(79, 70, 229, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 10% 80%, rgba(188, 82, 238, 0.1) 0%, transparent 40%);
+        }
+
+        /* هدر سایت شبیه به Astro */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .badge-top {
+            background: linear-gradient(90deg, rgba(188,82,238,0.2) 0%, rgba(79,70,229,0.2) 100%);
+            border: 1px solid rgba(188, 82, 238, 0.4);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #e2e8f0;
+        }
+
+        /* بخش اصلی (Hero Section) */
+        .hero {
+            max-width: 900px;
+            margin: 80px auto 40px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #ff7e5f, var(--astro-purple), #00f2fe);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 6s linear infinite;
+        }
+
+        @keyframes shine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+
+        /* ساختار چیدمان شرکت‌ها (Bento Grid) */
+        .grid-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            padding: 0 20px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: right;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(188, 82, 238, 0.3);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.5);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(800px circle at var(--x, 0px) var(--y, 0px), rgba(255,255,255,0.06), transparent 40%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .card-prefix {
+            font-family: monospace;
+            color: var(--astro-purple);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            display: block;
+            letter-spacing: 1px;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            margin-top: 80px;
+        }
+
+        /* بهینه‌سازی برای موبایل */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            header { padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">PERSICUS PRIME</div>
+        <div class="badge-top">شبکه و زیرساخت مرکزی</div>
+    </header>
+
+    <section class="hero">
+        <h1>اکوسیستم فناوری <br><span class="gradient-text">پرسیکوس پرایم</span></h1>
+        <p>دروازه میزبانی، پورتال کلاد و بستر مدیریت دانش لایه‌های چندرشته‌ای هلدینگ مرکزی</p>
+    </section>
+
+    <div class="grid-container">
+        <div class="card">
+            <span class="card-prefix">soft-net- / soft-dev-</span>
+            <h3>نرم‌افزار و هوش دیجیتال</h3>
+            <p>توسعه پورتال‌های توزیع‌شده، پلتفرم‌های اینترنتی و هسته وب‌سایت‌های هلدینگ با بالاترین استاندارد فرانت‌اِند.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-prefix">elec-core- / elec-iot-</span>
+            <h3>مهندسی الکترونیک و IoT</h3>
+            <p>طراحی بردهای میکروکنترلری هوشمند، سیستم‌های پایش تلمتری و اتوماسیون دقیق کارگاه‌های بیولوژیک هلدینگ.</p>
+        </div>
+
+        <div class="card">
+            <span class="card-prefix">bio-mrzalo-</span>
+            <h3>صنایع بیولوژیک (مستر زالو)</h3>
+            <p>بخش هوشمند تکثیر، فرآوری و توسعه فرآورده‌های بیوپزشکی تحت مانیتورینگ آنلاین پلتفرم‌های اختصاصی.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Persicus Prime Holding. All infrastructure assets are encrypted and secured.
+    </footer>
+
+</body>
+</html>
